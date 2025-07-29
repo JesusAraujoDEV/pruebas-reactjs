@@ -1,0 +1,109 @@
+// Variables
+$primary-dark: #1a1a2e; // Azul oscuro profundo
+$secondary-accent: #4d2c32; // Rojo rubí vibrante para acentos y estados de hover
+$tertiary-gold: #4b473c; // Dorado brillante para títulos y elementos clave
+$text-light: #f0f0f0; // Un blanco ligeramente cálido para el texto principal
+$text-soft: #b0b0b0; // Un gris claro para el texto secundario o descripciones
+$button-base-color: #5d4037; // Un marrón oscuro terroso o un gris oscuro cálido para el botón
+$button-hover-color: $tertiary-gold; // El dorado para el hover del botón
+$font-body: 'Fira Sans', sans-serif; // Para el texto del cuerpo y botones
+$font-heading: 'Merriweather', serif; // Opcional, si quieres una fuente con serifa más clásica para títulos
+
+// Puedes mantener Merriweather si te gusta para el h2
+// Si no, puedes usar Fira Sans para todo o una más bold/black de Fira Sans para los títulos
+// Para un look más cohesivo con Fira Sans, podrías hacer:
+// $font-heading: 'Fira Sans', sans-serif; // Usar Fira Sans para todo
+// Y en h2, ajustar font-weight para que sea más impactante.
+
+// Estilos globales (asumiendo que esto va en un archivo base o en App.module.scss)
+.body { // Este selector 'body' normalmente iría en un archivo CSS global o en index.css
+  background-color: $primary-dark;
+  color: $text-light;
+  font-family: $font-body; // Aplicamos Fira Sans al cuerpo
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; // Asegura que el fondo cubra toda la altura
+  display: flex; // Para centrar el contenido si lo pones en el body
+  justify-content: center;
+  align-items: center;
+}
+
+// Estilos de la tarjeta
+.card {
+  background: linear-gradient(145deg, $primary-dark, darken($primary-dark, 15%)); // Degradado más dinámico
+  border: 2px solid $tertiary-gold; // Borde dorado
+  border-radius: 15px;
+  padding: 2.5rem; // Más padding para espacio
+  color: $text-light;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 25px $secondary-accent; // Sombra más profunda y brillo sutil
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  font-family: $font-body; // Usa Fira Sans para el texto general de la tarjeta
+  max-width: 420px; // Ligeramente más ancha
+  margin: 2rem auto; // Centrar la carta
+
+  &:hover {
+    transform: translateY(-10px) scale(1.02); // Efecto de elevación sutil y ligero zoom
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8), 0 0 40px $text-light; // Sombra más intensa y brillo dorado
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    max-width: 250px; // Imagen un poco más grande
+    height: auto;
+    border-radius: 12px; // Bordes de imagen ligeramente más redondeados
+    border: 3px solid $secondary-accent; // Borde para la imagen
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); // Brillo sutil alrededor de la imagen
+    margin-bottom: 2rem;
+    object-fit: cover; // Asegura que la imagen cubra el área sin distorsionarse
+    transition: transform 0.3s ease-in-out;
+  }
+
+  h2 {
+    font-size: 2.8rem; // Título más grande
+    color: $text-light;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8); // Sombra de texto más pronunciada
+    letter-spacing: 3px; // Mayor espaciado entre letras
+    margin-top: 0.5rem; // Ajuste de margen
+    margin-bottom: 1rem;
+    font-family: $font-heading; // Usar Merriweather o Fira Sans para el título
+    font-weight: 700; // Título más audaz
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 1.1rem; // Texto de párrafo ligeramente más grande
+    line-height: 1.7;
+    color: $text-soft; // Color de texto secundario
+    margin-bottom: 2rem; // Más espacio debajo del párrafo
+  }
+
+  // Estilo para el botón dentro de la tarjeta
+  button {
+    background: linear-gradient(135deg, $button-base-color, darken($button-base-color, 15%)); // Un degradado más terroso/oscuro
+    border: none; // Quitar borde por defecto
+    border-radius: 50px; // Bordes muy redondeados (pill-shaped)
+    padding: 1rem 2.5rem; // Más padding para un botón más grande
+    color: $text-light;
+    font-size: 1.2rem; // Texto del botón más grande
+    font-weight: 600; // Más audaz
+    letter-spacing: 1px;
+    text-transform: uppercase; // Texto en mayúsculas
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); // Sombra sutil
+    transition: all 0.3s ease-in-out; // Transición para todos los cambios
+
+    &:hover {
+      background: linear-gradient(135deg, $button-hover-color, darken($button-hover-color, 10%)); // Degradado dorado al pasar el ratón
+      color: $primary-dark; // Texto oscuro sobre el dorado
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6), 0 0 15px $button-hover-color; // Sombra y brillo al pasar el ratón
+      transform: translateY(-3px); // Ligero efecto de elevación
+    }
+
+    &:active {
+      transform: translateY(0); // Vuelve a su posición al hacer clic
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); // Sombra de "presionado"
+    }
+  }
+}
