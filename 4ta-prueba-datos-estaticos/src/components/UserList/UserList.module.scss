@@ -1,0 +1,10 @@
+.container-list-card {
+    display: flex;
+    flex-direction: column; /* Apila las tarjetas verticalmente */
+    align-items: center;    /* Centra las tarjetas horizontalmente */
+    padding-left: 150%;
+    padding-right: 500%;
+    /* REMUEVE margin: 0 auto; si quieres que ocupe todo el ancho y no tiene max-width */
+    /* REMUEVE CUALQUIER width o max-width explícito si lo tenías */
+    width: 100%; /* Asegura que ocupe el 100% del ancho del padre */
+}

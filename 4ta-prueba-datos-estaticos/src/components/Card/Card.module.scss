@@ -1,0 +1,76 @@
+@import "./variables"; // Importa tus variables
+
+.card-container {
+  background-color: $color-bg-card;
+  border-radius: 0.5rem; // rounded-lg
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // shadow-md
+  padding-top: 5%;
+  height: 20%;
+  width: 120%;
+  max-width: 24rem; // max-w-sm
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); // hover:shadow-lg
+  }
+
+  .profile-picture {
+    width: 2rem; // w-8
+    height: 2rem; // h-8
+    border-radius: calc(infinity * 1px); // rounded-full
+    object-fit: cover;
+    margin-bottom: 1rem; // mb-4
+    border: 2px solid $color-border-image; // border-2 border-blue-400
+  }
+
+  .profile-placeholder {
+    width: 2rem; // w-8
+    height: 2rem; // h-8
+    border-radius: calc(infinity * 1px); // rounded-full
+    background-color: $color-placeholder-bg; // bg-gray-200
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem; // mb-4
+    color: $color-placeholder-text; // text-gray-500
+    font-size: 1.5rem; // text-2xl
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 1.5rem; // text-2xl
+    font-weight: 600; // font-semibold
+    color: $color-text-primary;
+    margin-bottom: 0.5rem; // mb-2
+    text-align: center;
+  }
+
+  p {
+    color: $color-text-secondary;
+    text-align: center;
+    margin-bottom: 0.75rem; // mb-3
+    word-break: break-words; // break-words
+
+    &.bio { // Estilo específico para la biografía
+      color: $color-text-secondary;
+      font-style: italic;
+      font-size: 0.875rem; // text-sm
+      line-height: 1.5; // leading-relaxed
+      margin-top: 0.5rem; // mt-2
+    }
+  }
+
+  .footer-divider {
+    margin-top: 1rem; // mt-4
+    padding-top: 1rem; // pt-4
+    border-top: 1px solid $color-footer-border; // border-t border-gray-200
+    width: 100%;
+    text-align: center;
+    font-size: 0.75rem; // text-xs
+    color: $color-footer-text;
+  }
+}
