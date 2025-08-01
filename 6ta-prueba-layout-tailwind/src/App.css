@@ -1,3 +1,17 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@Layer components{
+  .card{
+    @apply bg-red-500 w-40 h-40 grid place-content-center rounded-lg text-white font-bold border-2 border-red-600 text-4xl;
+  }
+}
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
